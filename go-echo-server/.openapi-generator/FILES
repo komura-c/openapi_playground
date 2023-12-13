@@ -2,10 +2,6 @@
 Dockerfile
 README.md
 go.mod
-handlers/api_pet.go
-handlers/api_store.go
-handlers/api_user.go
-handlers/container.go
 main.go
 models/hello-world.go
 models/model_address.go
