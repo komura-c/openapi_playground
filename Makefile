@@ -4,7 +4,7 @@ gen-server:
 
 .PHONY: gen-client
 gen-client:
-	openapi-generator generate -i openapi.yaml -g typescript-fetch -o ./angular-client/src/app/api/petstore
+	openapi-generator generate -i openapi.yaml -g typescript-fetch -o ./angular-client/src/app/lib/api/petstore
 
 # .PHONY: gen-client-docker
 # gen-client-docker:

@@ -16,11 +16,11 @@
 import * as runtime from '../runtime';
 import type {
   Order,
-} from '../models/index';
+} from '../models';
 import {
     OrderFromJSON,
     OrderToJSON,
-} from '../models/index';
+} from '../models';
 
 export interface DeleteOrderRequest {
     orderId: number;

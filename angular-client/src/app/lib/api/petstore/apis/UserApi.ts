@@ -16,11 +16,11 @@
 import * as runtime from '../runtime';
 import type {
   User,
-} from '../models/index';
+} from '../models';
 import {
     UserFromJSON,
     UserToJSON,
-} from '../models/index';
+} from '../models';
 
 export interface CreateUserRequest {
     user?: User;
