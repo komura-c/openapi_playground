@@ -6,7 +6,7 @@ import { Configuration } from './petstore/runtime';
   providedIn: 'root'
 })
 export class PetstoreApiService {
-  private hostURL: string = 'https://petstore.swagger.io/v2/';
+  private hostURL: string = 'https://petstore.swagger.io/v2';
   private petApi = new PetApi(new Configuration({
     basePath: this.hostURL, // override base path
   }));

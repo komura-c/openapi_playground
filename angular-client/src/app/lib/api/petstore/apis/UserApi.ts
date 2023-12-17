@@ -16,11 +16,11 @@
 import * as runtime from '../runtime';
 import type {
   User,
-} from '../models';
+} from '../models/index';
 import {
     UserFromJSON,
     UserToJSON,
-} from '../models';
+} from '../models/index';
 
 export interface CreateUserRequest {
     user?: User;
@@ -49,7 +49,7 @@ export interface UpdateUserRequest {
 }
 
 /**
- * 
+ *
  */
 export class UserApi extends runtime.BaseAPI {
 
@@ -100,6 +100,7 @@ export class UserApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
+            // @ts-ignore
             body: requestParameters.user.map(UserToJSON),
         }, initOverrides);
 
@@ -147,7 +148,7 @@ export class UserApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * Get user by user name
      */
     async getUserByNameRaw(requestParameters: GetUserByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<User>> {
@@ -170,7 +171,7 @@ export class UserApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * Get user by user name
      */
     async getUserByName(requestParameters: GetUserByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<User> {
@@ -179,7 +180,7 @@ export class UserApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * Logs user into the system
      */
     async loginUserRaw(requestParameters: LoginUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
@@ -210,7 +211,7 @@ export class UserApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * Logs user into the system
      */
     async loginUser(requestParameters: LoginUserRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
@@ -219,7 +220,7 @@ export class UserApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * Logs out current logged in user session
      */
     async logoutUserRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -238,7 +239,7 @@ export class UserApi extends runtime.BaseAPI {
     }
 
     /**
-     * 
+     *
      * Logs out current logged in user session
      */
     async logoutUser(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
