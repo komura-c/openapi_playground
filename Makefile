@@ -7,7 +7,7 @@ gen-client:
 	openapi-generator generate -i openapi.yaml -g typescript-fetch -o ./angular-client/src/app/lib/api/petstore
 
 .PHONY: gen-server-docker
-gen-server:
+gen-server-docker:
 	docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
     -i /local/openapi.yaml \
 		-g go-echo-server \
