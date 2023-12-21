@@ -24,7 +24,7 @@ export class PetstoreApiService {
     return lastValueFrom(response);
   }
   updatePet(putPetRequest: UpdatePetRequest): Promise<Pet> {
-    const response = this.http.post<Pet>(this.hostURL + '/pet', PetToJSON(putPetRequest.pet)).pipe(
+    const response = this.http.put<Pet>(this.hostURL + '/pet', PetToJSON(putPetRequest.pet)).pipe(
       map((res) => {
         return PetFromJSON(res);
       })
