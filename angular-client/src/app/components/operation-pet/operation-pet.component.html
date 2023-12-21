@@ -1,0 +1,37 @@
+<p>operation-pet works!</p>
+<input type="text" id="petId" name="petId" class="form-control"
+required minlength="4" [(ngModel)]="petId" />
+<div>
+  <button (click)="getPetById()">ペット取得</button>
+  @if (
+    data().type === 'get'
+  ) {
+    <p>取得したペット: {{ data().pet| json }}</p>
+  }
+</div>
+<div>
+  <button (click)="addPet()">ペット追加</button>
+  @if (
+    data().type === 'add'
+  ) {
+    <p>追加したペット:  {{ data().pet| json}}</p>
+  }
+</div>
+<div>
+  <button (click)="updatePet()">ペット更新</button>
+  @if (
+    data().type === 'update'
+  ) {
+    <p>更新したペット:  {{ data().pet | json}}</p>
+  }
+</div>
+<div>
+  <button (click)="deletePet()">ペット削除</button>
+  @if (
+    data().type === 'delete'
+  ) {
+    <p>ペットを削除した</p>
+  }
+</div>
+
+
